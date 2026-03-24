@@ -3,7 +3,7 @@ import { GlobalContext } from '../context/GlobalState';
 
 
 
-export const Balance = () => {
+const Balance = () => {
     const { movimientos } = React.useContext(GlobalContext);
 
   //obtenber todos los imporrtes de nuestros gastos

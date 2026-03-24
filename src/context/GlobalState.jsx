@@ -24,7 +24,7 @@ export const GlobalProvider = ({ children }) => {
     //acctions
     async function getMovimientos() {
       try {
-            const response = await fetch(`{API_URL}`, {
+            const response = await fetch(`${API_URL}`, {
                 method: 'GET',
             });
 
