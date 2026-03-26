@@ -6,25 +6,26 @@ const AppReducer = (state, action) => {
                 loading: false,
                 movimientos: action.payload,
             };
-        case "DELETE_MOVIMIENTO":
+        case 'DELETE_MOVIMIENTO':
             return {
                 ...state,
                 loading: false,
-                movimientos: state.movimientos.filter(movimiento => movimiento.id !== action.payload),
+                // MongoDB usa _id, no id
+                movimientos: state.movimientos.filter(movimiento => movimiento._id !== action.payload),
             };
-        case "ADD_MOVIMIENTO":
+        case 'ADD_MOVIMIENTO':
             return {
                 ...state,
                 loading: false,
                 movimientos: [action.payload, ...state.movimientos],
             };
-        case "ERROR_MOVIMIENTO":
+        case 'ERROR_MOVIMIENTOS':
             return {
                 ...state,
                 loading: false,
                 error: action.payload
             };
-    }   
+    }
 }
 
 export default AppReducer;
